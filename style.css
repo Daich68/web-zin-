@@ -1,367 +1,367 @@
-/* Base Styles */
-html {
-    scroll-behavior: smooth;
-    font-size: 1vw;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Space Mono', monospace;
-    color: #ffffff;
-    background-color: #000000;
-    overflow-x: hidden;
-    line-height: 1.6;
-    letter-spacing: -0.02em;
-}
-
-body {
-    mix-blend-mode: difference;
-    margin: 0;
-    padding: 0;
-    font-family: 'Space Mono', monospace;
-    color: #ffffff;
-    background-color: #000000;
-    overflow-x: hidden;
-    line-height: 1.6;
-    letter-spacing: -0.02em;
-    height: 100%;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
-}
-
-/* Canvas Container */
-#canvas-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-#canvas-container canvas {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-}
-
-/* Typography */
-.glitch-text {
-    font-size: 5em;
-    font-weight: 700;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-    margin: 0;
-    position: relative;
-    mix-blend-mode: difference;
-}
-
-.subtitle {
-    font-size: 1em;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    opacity: 0.7;
-    margin-top: 1em;
-}
-
-/* Full Screen Sections */
-.site-header, .poem-container, footer {
-    width: 100%;
-    height: 100vh;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    position: relative;
-    overflow: hidden;
-}
-
-#poems-container {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.poem-container {
-    
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2em;
-    scroll-snap-align: start;
-}
-
-.poem {
-    transform: rotate(-90deg) !important;
-    transform-origin: center !important;
-    max-width: 90vh;
-    height: 80vh;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    padding: 3em;
-    border-radius: 1em;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    overflow-x: auto;
-    overflow-y: hidden;
-    direction: ltr;
-}
-
-.poem:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.poem[data-lang="ko"] {
-    font-family: 'Noto Sans KR', sans-serif;
-}
-
-.poem-title {
-    font-size: 2em;
-    margin-left: 2em;
-    line-height: 1.4;
-    transition: all 0.3s ease;
-    padding-bottom: 2em;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.poem-content {
-    font-size: 1.2em;
-    line-height: 2;
-    transition: all 0.3s ease;
-    margin: 0 2em;
-    height: 100%;
-}
-
-.poem-content p {
-    margin-left: 1.5em;
-    transition: transform 0.3s ease;
-}
-
-.poem-content p:hover {
-    transform: scale(1.02);
-}
-
-.poem-info {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    position: absolute;
-    left: 1em;
-    top: 3em;
-    bottom: 3em;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 1em;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.poet-info {
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-}
-
-.poem-date {
-    opacity: 0.5;
-    font-size: 0.9em;
-}
-
-.poem-tags {
-    position: absolute;
-    right: 1em;
-    top: 3em;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-    padding-left: 1em;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.tag {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.5em 1em;
-    border-radius: 2em;
-    font-size: 0.8em;
-    white-space: nowrap;
-}
-
-.poem::-webkit-scrollbar {
-    height: 6px;
-}
-
-.poem::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.poem::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 3px;
-}
-
-/* Header Styles */
-.site-header {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent);
-    backdrop-filter: blur(3px);
-    text-align: center;
-    padding: 0 2em;
-}
-
-/* Footer Styles */
-footer {
-    background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
-    backdrop-filter: blur(3px);
-    text-align: center;
-    padding: 0 2em;
-}
-
-/* Poem Layouts */
-.diagonal-layout {
-    transform: rotate(-5deg) translateX(5%);
-}
-
-.vertical-layout {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    height: 80vh;
-}
-
-.circular-layout .poem-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: rotate 30s linear infinite;
-}
-
-/* Poem Content */
-.poem-content p {
-    margin: 0.8em 0;
-    font-size: 1.2em;
-    transition: all 0.3s ease;
-    letter-spacing: 0.05em;
-    line-height: 1.8;
-}
-
-.poem-content p:hover {
-    transform: scale(1.02);
-    color: rgba(255, 255, 255, 0.9);
-}
-
-/* Loading Indicator */
-.loading-indicator {
-    text-align: center;
-    padding: 2em;
-    display: none;
-    letter-spacing: 0.2em;
-    mix-blend-mode: difference;
-}
-
-.loading-indicator span {
-    animation: pulse 1.5s infinite;
-}
-
-/* Scroll to Top Button */
-.scroll-to-top {
-    position: fixed;
-    bottom: 2em;
-    right: 2em;
-    width: 3em;
-    height: 3em;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-    z-index: 1000;
-}
-
-.scroll-to-top.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.scroll-to-top:hover {
-    background: rgba(0, 0, 0, 0.9);
-    border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-2px);
-}
-
-.scroll-to-top svg {
-    width: 1.5em;
-    height: 1.5em;
-    transition: transform 0.3s ease;
-}
-
-.scroll-to-top:hover svg {
-    transform: translateY(-2px);
-}
-
-/* Animations */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    /* Base Styles */
+    html {
+        scroll-behavior: smooth;
+        font-size: 1vw;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Space Mono', monospace;
+        color: #ffffff;
+        background-color: #000000;
+        overflow-x: hidden;
+        line-height: 1.6;
+        letter-spacing: -0.02em;
     }
-}
 
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
+    body {
+        mix-blend-mode: difference;
+        margin: 0;
+        padding: 0;
+        font-family: 'Space Mono', monospace;
+        color: #ffffff;
+        background-color: #000000;
+        overflow-x: hidden;
+        line-height: 1.6;
+        letter-spacing: -0.02em;
+        height: 100%;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+    }
 
-@keyframes pulse {
-    0% { opacity: 0.3; }
-    50% { opacity: 0.8; }
-    100% { opacity: 0.3; }
-}
+    /* Canvas Container */
+    #canvas-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+    #canvas-container canvas {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* Typography */
     .glitch-text {
-        font-size: 3em;
+        font-size: 5em;
+        font-weight: 700;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        margin: 0;
+        position: relative;
+        mix-blend-mode: difference;
+    }
+
+    .subtitle {
+        font-size: 1em;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        opacity: 0.7;
+        margin-top: 1em;
+    }
+
+    /* Full Screen Sections */
+    .site-header, .poem-container, footer {
+        width: 100%;
+        height: 100vh;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #poems-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .poem-container {
+        
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2em;
+        scroll-snap-align: start;
+    }
+
+    .poem {
+        transform: rotate(-90deg) !important;
+        transform-origin: center !important;
+        max-width: 50vh;
+        height: 80vh;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+        padding: 3em;
+        border-radius: 1em;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        overflow-x: auto;
+        overflow-y: hidden;
+        direction: ltr;
+    }
+
+    .poem:hover {
+        transform: translateY(-5px);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .poem[data-lang="ko"] {
+        font-family: 'Noto Sans KR', sans-serif;
     }
 
     .poem-title {
         font-size: 2em;
+        margin-left: 2em;
+        line-height: 1.4;
+        transition: all 0.3s ease;
+        padding-bottom: 2em;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
+    .poem-content {
+        font-size: 1.2em;
+        line-height: 2;
+        transition: all 0.3s ease;
+        margin: 0 2em;
+        height: 100%;
+    }
+
+    .poem-content p {
+        margin-left: 1.5em;
+        transition: transform 0.3s ease;
+    }
+
+    .poem-content p:hover {
+        transform: scale(1.02);
+    }
+
+    .poem-info {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        position: absolute;
+        left: 1em;
+        top: 3em;
+        bottom: 3em;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 1em;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .poet-info {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+    }
+
+    .poem-date {
+        opacity: 0.5;
+        font-size: 0.9em;
+    }
+
+    .poem-tags {
+        position: absolute;
+        right: 1em;
+        top: 3em;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        padding-left: 1em;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .tag {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.5em 1em;
+        border-radius: 2em;
+        font-size: 0.8em;
+        white-space: nowrap;
+    }
+
+    .poem::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .poem::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .poem::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 3px;
+    }
+
+    /* Header Styles */
+    .site-header {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent);
+        backdrop-filter: blur(3px);
+        text-align: center;
+        padding: 0 2em;
+    }
+
+    /* Footer Styles */
+    footer {
+        background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+        backdrop-filter: blur(3px);
+        text-align: center;
+        padding: 0 2em;
+    }
+
+    /* Poem Layouts */
     .diagonal-layout {
-        transform: none;
+        transform: rotate(-5deg) translateX(5%);
     }
 
     .vertical-layout {
-        writing-mode: horizontal-tb;
-        height: auto;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        height: 80vh;
     }
 
-    .poem {
-        padding: 1.5em;
+    .circular-layout .poem-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: rotate 30s linear infinite;
     }
-}
 
-/* Korean Style Elements */
-.korean-text {
-    font-family: 'Noto Sans KR', sans-serif;
-    word-break: keep-all;
-    line-height: 1.7;
-}
+    /* Poem Content */
+    .poem-content p {
+        margin: 0.8em 0;
+        font-size: 1.2em;
+        transition: all 0.3s ease;
+        letter-spacing: 0.05em;
+        line-height: 1.8;
+    }
+
+    .poem-content p:hover {
+        transform: scale(1.02);
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Loading Indicator */
+    .loading-indicator {
+        text-align: center;
+        padding: 2em;
+        display: none;
+        letter-spacing: 0.2em;
+        mix-blend-mode: difference;
+    }
+
+    .loading-indicator span {
+        animation: pulse 1.5s infinite;
+    }
+
+    /* Scroll to Top Button */
+    .scroll-to-top {
+        position: fixed;
+        bottom: 2em;
+        right: 2em;
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+        z-index: 1000;
+    }
+
+    .scroll-to-top.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .scroll-to-top:hover {
+        background: rgba(0, 0, 0, 0.9);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-2px);
+    }
+
+    .scroll-to-top svg {
+        width: 1.5em;
+        height: 1.5em;
+        transition: transform 0.3s ease;
+    }
+
+    .scroll-to-top:hover svg {
+        transform: translateY(-2px);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+        0% { opacity: 0.3; }
+        50% { opacity: 0.8; }
+        100% { opacity: 0.3; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .glitch-text {
+            font-size: 3em;
+        }
+
+        .poem-title {
+            font-size: 2em;
+        }
+
+        .diagonal-layout {
+            transform: none;
+        }
+
+        .vertical-layout {
+            writing-mode: horizontal-tb;
+            height: auto;
+        }
+
+        .poem {
+            padding: 1.5em;
+        }
+    }
+
+    /* Korean Style Elements */
+    .korean-text {
+        font-family: 'Noto Sans KR', sans-serif;
+        word-break: keep-all;
+        line-height: 1.7;
+    }
