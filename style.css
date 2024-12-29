@@ -1,6 +1,7 @@
 /* Base Styles */
 html {
     scroll-behavior: smooth;
+    font-size: 1vw;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -47,7 +48,7 @@ body {
 
 /* Typography */
 .glitch-text {
-    font-size: 5rem;
+    font-size: 5em;
     font-weight: 700;
     letter-spacing: -0.05em;
     text-transform: uppercase;
@@ -57,11 +58,11 @@ body {
 }
 
 .subtitle {
-    font-size: 1rem;
+    font-size: 1em;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     opacity: 0.7;
-    margin-top: 1rem;
+    margin-top: 1em;
 }
 
 /* Full Screen Sections */
@@ -93,7 +94,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 2em;
     scroll-snap-align: start;
 }
 
@@ -104,8 +105,8 @@ body {
     height: 80vh;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
-    padding: 3rem;
-    border-radius: 1rem;
+    padding: 3em;
+    border-radius: 1em;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     cursor: pointer;
@@ -127,24 +128,24 @@ body {
 }
 
 .poem-title {
-    font-size: 2rem;
-    margin-left: 2rem;
+    font-size: 2em;
+    margin-left: 2em;
     line-height: 1.4;
     transition: all 0.3s ease;
-    padding-bottom: 2rem;
+    padding-bottom: 2em;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .poem-content {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     line-height: 2;
     transition: all 0.3s ease;
-    margin: 0 2rem;
+    margin: 0 2em;
     height: 100%;
 }
 
 .poem-content p {
-    margin-left: 1.5rem;
+    margin-left: 1.5em;
     transition: transform 0.3s ease;
 }
 
@@ -156,45 +157,45 @@ body {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     position: absolute;
-    left: 1rem;
-    top: 3rem;
-    bottom: 3rem;
+    left: 1em;
+    top: 3em;
+    bottom: 3em;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 1rem;
+    padding-right: 1em;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .poet-info {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 1em;
 }
 
 .poem-date {
     opacity: 0.5;
-    font-size: 0.9rem;
+    font-size: 0.9em;
 }
 
 .poem-tags {
     position: absolute;
-    right: 1rem;
-    top: 3rem;
+    right: 1em;
+    top: 3em;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     display: flex;
     flex-direction: row;
-    gap: 1rem;
-    padding-left: 1rem;
+    gap: 1em;
+    padding-left: 1em;
     border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tag {
     background: rgba(255, 255, 255, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-    font-size: 0.8rem;
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    font-size: 0.8em;
     white-space: nowrap;
 }
 
@@ -216,7 +217,7 @@ body {
     background: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent);
     backdrop-filter: blur(3px);
     text-align: center;
-    padding: 0 2rem;
+    padding: 0 2em;
 }
 
 /* Footer Styles */
@@ -224,7 +225,7 @@ footer {
     background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
     backdrop-filter: blur(3px);
     text-align: center;
-    padding: 0 2rem;
+    padding: 0 2em;
 }
 
 /* Poem Layouts */
@@ -247,8 +248,8 @@ footer {
 
 /* Poem Content */
 .poem-content p {
-    margin: 0.8rem 0;
-    font-size: 1.2rem;
+    margin: 0.8em 0;
+    font-size: 1.2em;
     transition: all 0.3s ease;
     letter-spacing: 0.05em;
     line-height: 1.8;
@@ -262,7 +263,7 @@ footer {
 /* Loading Indicator */
 .loading-indicator {
     text-align: center;
-    padding: 2rem;
+    padding: 2em;
     display: none;
     letter-spacing: 0.2em;
     mix-blend-mode: difference;
@@ -275,10 +276,10 @@ footer {
 /* Scroll to Top Button */
 .scroll-to-top {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 3rem;
-    height: 3rem;
+    bottom: 2em;
+    right: 2em;
+    width: 3em;
+    height: 3em;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -306,8 +307,8 @@ footer {
 }
 
 .scroll-to-top svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.5em;
+    height: 1.5em;
     transition: transform 0.3s ease;
 }
 
@@ -337,11 +338,11 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .glitch-text {
-        font-size: 3rem;
+        font-size: 3em;
     }
 
     .poem-title {
-        font-size: 2rem;
+        font-size: 2em;
     }
 
     .diagonal-layout {
@@ -354,7 +355,7 @@ footer {
     }
 
     .poem {
-        padding: 1.5rem;
+        padding: 1.5em;
     }
 }
 
