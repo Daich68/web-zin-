@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rosamundi 〔✛〕 web-zin</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="mySketch.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="canvas-container"></div>
+    
+    <header class="site-header">
+        <h1 class="glitch-text">rosamundi</h1>
+        <p class="subtitle korean-text">실험적 시와 디지털 예술의 공간</p>
+    </header>
+
+    <main id="poems-container">
+        <!-- Poems will be dynamically inserted here -->
+    </main>
+
+    <div class="loading-indicator">
+        <span class="korean-text">시를 불러오는 중...</span>
+    </div>
+
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">rosamundi 〔✛〕 2024</p>
+            <p class="submission-info korean-text">Submit your work: <span class="highlight">t.me/rosamundi_bot</span></p>
+        </div>
+    </footer>
+
+    <script src="poems.js"></script>
+</body>
+</html>
